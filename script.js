@@ -8,6 +8,7 @@ function actualizarContenido(){
     ListaTareas.innerHTML = "";
     tareasAgregadas.forEach((valor, indice) =>{
         const div = document.createElement("div");
+        div.className="listaTareas"
         ListaTareas.appendChild(div);
 
         const p = document.createElement("p");
@@ -15,7 +16,16 @@ function actualizarContenido(){
         div.appendChild(p);
 
         const button = document.createElement("button");
-        button.textContent = "delete";
+        const imagen = document.createElement("img")
+        imagen.src="./delete icon.png"
+        button.appendChild(imagen)
+        div.appendChild(button)
+        
+        
+        
+    
+        
+    
         button.addEventListener("click", () => {
             tareasAgregadas.splice(indice,1);
             actualizarContenido();
